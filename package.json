@@ -1,0 +1,23 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hargRyan/calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hargRyan/calculator/issues"
+  },
+  "homepage": "https://github.com/hargRyan/calculator#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
