@@ -12,14 +12,18 @@ const operations = (() => {
 })();
 
 const display = document.getElementById('display');
-let displayValue = display.innerText;
+let num1 = undefined;
+let num2 = undefined;
 
-function updateDisplay() {
+function displayTest(e) {
+  let td = e.closest('td');
+  display.innerText += td.innerText;
 
-  let pressedButton = document.getElementById('seven');
-  console.log(pressedButton.innerText);
-  display.innerText += pressedButton.textContent;
+  
+}
 
+function clearDisplay() {
+  display.innerText = "0";
 }
 
   
