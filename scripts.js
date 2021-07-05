@@ -11,6 +11,17 @@ const operations = (() => {
   };
 })();
 
+const display = document.getElementById('display');
+let displayValue = display.innerText;
+
+function updateDisplay() {
+
+  let pressedButton = document.getElementById('seven');
+  console.log(pressedButton.innerText);
+  display.innerText += pressedButton.textContent;
+
+}
+
   
 
 
