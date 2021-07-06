@@ -19,11 +19,21 @@
     border: 1px black solid;
     width: 400px;
     height: 120px;
-    display: flex;
-    justify-content: end;
-    align-items: center;
+    text-align: right;
+
+    display: grid;
+    grid-template-rows: repeat(4, 25%);
+    grid-template-areas: "upper-display"
+                          "."
+                          "display"
+                          "display";
+    
 }
 
+#display {
+    grid-area: display;
+    font-size: xx-large;
+}
 
 #calc-buttons {
     border: 1px solid black;
