@@ -11,10 +11,11 @@ const operations = (() => {
   };
 })();
 
+const clearButton = document.getElementById('clear');
 const numKeys = document.querySelectorAll('.number');
 const display = document.getElementById('display');
-let num1 = undefined;
-let num2 = undefined;
+let num1 = "";
+let num2 = "";
 let operation = undefined;
 
 
@@ -25,6 +26,8 @@ function clearDisplay() {
 
 function setAdd() {
   operation = operations.add;
+  num1 += display.textContent;
+
 }
 
 function setSubtract () {
@@ -47,10 +50,19 @@ function evaluate(a, b, operation) {
 function setButtons() {
   numKeys.forEach((key) => {
     key.addEventListener('click', () => {
-      
+      display.innerText += key.innerText;
     });
   });
+  
+  clearButton.addEventListener('click', () => {
+    clearDisplay();
+  })
+
+  let addButton = document.getElementById('add');
+  addButton.addEventListener('click', () => {
+    setAdd();
+  })
 }
   
-
+setButtons();
 module.exports = operations;
