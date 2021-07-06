@@ -35,6 +35,11 @@
     font-size: xx-large;
 }
 
+#upper-display {
+    grid-area: upper-display;
+    font-size: large;
+}
+
 #calc-buttons {
     border: 1px solid black;
     width: 400px;
