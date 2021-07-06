@@ -20,8 +20,11 @@ let operation = undefined;
 
 
 
-function clearDisplay() {
+function clearAll() {
   display.innerText = "0";
+  num1 = "";
+  num2 = ""
+  operation = undefined;
 }
 
 function setAdd() {
@@ -42,22 +45,35 @@ function setDivide() {
   operation = operations.divide;
 }
 
-function evaluate(a, b, operation) {
-  if (!num2) return;
+function appendNumber (e) {
+  if (display.textContent === '0') {
+    display.innerText = e.target.innerText;
+  }
+  else {
+    display.innerText += e.target.innerText;
+  }
+}
 
-  let result = operations.operator(num1, num2, operation);
+function evaluate(a, b, oper) {
+  if (operation !== undefined) display.textContent = operations.operator(num1, num2, oper);
+  num2 = display.textContent;
+  let result = operations.operator(num1, num2, oper);
   console.log(result);
 }
 
 function setButtons() {
+
   numKeys.forEach((key) => {
-    key.addEventListener('click', () => {
-      display.innerText += key.innerText;
-    });
+    key.addEventListener('click', (e) => {
+      let myEvent = e;
+      console.log(myEvent);
+      appendNumber(myEvent);
+    }
+    );
   });
   
   clearButton.addEventListener('click', () => {
-    clearDisplay();
+    clearAll();
   })
 
   let addButton = document.getElementById('add');
