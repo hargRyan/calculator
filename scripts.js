@@ -43,6 +43,8 @@ function setDivide() {
 }
 
 function evaluate(a, b, operation) {
+  if (!num2) return;
+
   let result = operations.operator(num1, num2, operation);
   console.log(result);
 }
@@ -62,7 +64,12 @@ function setButtons() {
   addButton.addEventListener('click', () => {
     setAdd();
   })
+
+  let equalButton = document.getElementById('equal');
+  equalButton.addEventListener('click', () => {
+    evaluate(num1, num2, operation);
+  })
 }
   
 setButtons();
-module.exports = operations;
+//module.exports = operations;
