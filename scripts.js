@@ -8,10 +8,10 @@ const operations = (() => {
     } else
       return  a / b;
   }
-  const operator = (a, b, operation) => operation(Number(a), Number(b));
+  const operate = (a, b, operation) => operation(Number(a), Number(b));
 
   return {
-    add, subtract, multiply, divide, operator,
+    add, subtract, multiply, divide, operate,
   };
 })();
 
@@ -98,11 +98,12 @@ function evaluate(a, b, oper) {
   num1 = Number(upperDisplay.textContent);
   num2 = Number(display.textContent);
   
-  display.textContent = operations.operator(num1, num2, oper);
+  display.textContent = operations.operate(num1, num2, oper).toFixed(3);
+  operation = undefined;
 
   if (display.textContent === "") {
     alert("Cannot divide by 0!");
-    clearAll();  
+    clearAll();
     }
   }
 
